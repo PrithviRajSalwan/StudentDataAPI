@@ -39,7 +39,8 @@ namespace StudentDataAPI.Controllers
 
 
             lstStudentDetail = GetAllStudentData();
-
+            
+            int lTotalRecords = lstStudentDetail.Count;
             // Filter Data
             if (FilterData.FilterQuery != "" && FilterData.FilterQuery != null)
             {
@@ -108,7 +109,7 @@ namespace StudentDataAPI.Controllers
 
 
 
-            var DataContainerOfStatusAndRowData = new {data = lstStudentDetail, recordsFiltered = lstStudentDetail.Count};
+            var DataContainerOfStatusAndRowData = new { data = lstStudentDetail, recordsTotal = lTotalRecords, recordsFiltered = lstStudentDetail.Count };
             return Json(DataContainerOfStatusAndRowData);
         }
 
