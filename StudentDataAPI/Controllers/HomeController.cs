@@ -386,7 +386,7 @@ namespace StudentDataAPI.Controllers
 
 
 
-            StudentDetail7.StudentId = 5;
+            StudentDetail7.StudentId = 7;
             StudentDetail7.FirstName = "James";
             StudentDetail7.LastName = "Mcvoy";
             StudentDetail7.Class = "3";
