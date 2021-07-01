@@ -376,13 +376,13 @@ namespace StudentDataAPI.Controllers
             SubjectData14.StudentId = 7;
             SubjectData14.SubjectMarks = 67;
             SubjectData14.SubjectName = S;
-            StudentDetailList5.Add(SubjectData14);
+            StudentDetailList7.Add(SubjectData14);
 
             SubjectData SubjectData15 = new SubjectData();
             SubjectData15.StudentId = 7;
             SubjectData15.SubjectMarks = 45;
             SubjectData15.SubjectName = M;
-            StudentDetailList5.Add(SubjectData15);
+            StudentDetailList7.Add(SubjectData15);
 
 
 
@@ -391,6 +391,33 @@ namespace StudentDataAPI.Controllers
             StudentDetail7.LastName = "Mcvoy";
             StudentDetail7.Class = "3";
             StudentDetail7.SubjectDataList = StudentDetailList7;
+
+
+            //////////////////////////////////////////////////////////////////
+            StudentDetail StudentDetail8 = new StudentDetail();
+
+
+            List<SubjectData> StudentDetailList8 = new List<SubjectData>();
+
+            SubjectData SubjectData16 = new SubjectData();
+            SubjectData16.StudentId = 8;
+            SubjectData16.SubjectMarks = 67;
+            SubjectData16.SubjectName = S;
+            StudentDetailList8.Add(SubjectData16);
+
+            SubjectData SubjectData17 = new SubjectData();
+           SubjectData17.StudentId = 8;
+           SubjectData17.SubjectMarks = 45;
+            SubjectData17.SubjectName = M;
+            StudentDetailList8.Add(SubjectData17);
+
+
+
+            StudentDetail8.StudentId = 8;
+            StudentDetail8.FirstName = "Raj";
+            StudentDetail8.LastName = "Malhotra";
+            StudentDetail8.Class = "3";
+            StudentDetail8.SubjectDataList = StudentDetailList8;
 
 
             #endregion
@@ -402,6 +429,7 @@ namespace StudentDataAPI.Controllers
             lstStudentDetail.Add(StudentDetail5);
             lstStudentDetail.Add(StudentDetail6);
             lstStudentDetail.Add(StudentDetail7);
+            lstStudentDetail.Add(StudentDetail8);
 
             return lstStudentDetail;
         }
