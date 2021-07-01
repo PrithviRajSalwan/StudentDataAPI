@@ -284,7 +284,7 @@ namespace StudentDataAPI.Controllers
             StudentDetail3.StudentId = 3;
             StudentDetail3.FirstName = "Karen";
             StudentDetail3.LastName = "Core";
-            StudentDetail3.Class = "3";
+            StudentDetail3.Class = "6";
             StudentDetail3.SubjectDataList = StudentDetailList3;
 
             //////////////////////////////////////////////////////////////////
@@ -310,7 +310,7 @@ namespace StudentDataAPI.Controllers
             StudentDetail4.StudentId = 4;
             StudentDetail4.FirstName = "Karen";
             StudentDetail4.LastName = "Core";
-            StudentDetail4.Class = "3";
+            StudentDetail4.Class = "2";
             StudentDetail4.SubjectDataList = StudentDetailList4;
             //////////////////////////////////////////////////////////////////
             StudentDetail StudentDetail5 = new StudentDetail();
@@ -335,7 +335,7 @@ namespace StudentDataAPI.Controllers
             StudentDetail5.StudentId = 5;
             StudentDetail5.FirstName = "Alice";
             StudentDetail5.LastName = "Glass";
-            StudentDetail5.Class = "3";
+            StudentDetail5.Class = "4";
             StudentDetail5.SubjectDataList = StudentDetailList5;
 
 
@@ -362,7 +362,7 @@ namespace StudentDataAPI.Controllers
             StudentDetail6.StudentId = 6;
             StudentDetail6.FirstName = "Ali";
             StudentDetail6.LastName = "Glass";
-            StudentDetail6.Class = "3";
+            StudentDetail6.Class = "4";
             StudentDetail6.SubjectDataList = StudentDetailList6;
 
 
@@ -436,7 +436,7 @@ namespace StudentDataAPI.Controllers
             StudentDetail9.StudentId = 9;
             StudentDetail9.FirstName = "Kumar";
             StudentDetail9.LastName = "Raj";
-            StudentDetail9.Class = "3";
+            StudentDetail9.Class = "1";
             StudentDetail9.SubjectDataList = StudentDetailList9;
 
             //////////////////////////////////////////////////////////////////
