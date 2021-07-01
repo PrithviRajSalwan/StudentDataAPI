@@ -1,0 +1,262 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - StudentDataAPI</title>
+    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+</head>
+<body style="background-image: url('https://wallpaperaccess.com/full/449895.jpg')">
+    <div class="container" style=" margin-top: 2em">
+        <div id="page-wrapper " class="jumbotron">
+            <form class="form-inline" action="/action_page.php">
+                <div class="form-group">
+                    <input type="Search" class="form-control" id="StudentSearch" placeholder="Search" name="Search">
+                </div>
+                <div class="form-group m-2" style=" margin-left: 2em">
+                    <div class="form-group">
+                        <label for="sel1"> Filter:</label>
+                        <select id="SelectedFilter" class="form-control">
+                            <option selected value="1">First Name</option>
+                            <option value="2">Last  Name</option>
+                            <option value="3">Class </option>
+                            <option value="4">Subject</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button id="FilterDataSearch" type="button" class="btn btn-default" style=" margin-left: 2em">Search</button>
+
+                <button id="CreateNewStudentModalButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#createStudentData" style=" margin-left: 2em" data-backdrop="static" data-keyboard="false">AddStudent</button>
+            </form>
+
+
+            <br>
+
+            <div class="row heading_top">
+
+
+                <div class="col-xs-12">
+                    <h4><span> <i class="fa fa-list-alt" aria-hidden="true"></i> </span> Student Data </h4>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <!-- Page Heading -->
+                <div id="main">
+                    <!--BreakRemoved--<br>-->
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="row" style="display: block ">
+                                <div class="col-xs-12">
+                                    <div class="table-responsive">
+                                        <table id="StudentDataTable" class="table  table-striped " cellspacing="0" width="100%">
+                                            <thead>
+
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>First Name</th>
+
+                                                    <th>Last Name</th>
+                                                    <th>Class</th>
+                                                    <th> Subject  -  Marks</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody id="StudentDataTableBody">
+                                                <tr class="">
+
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!--Create Student -->
+    <div class="modal fade" id="createStudentData" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Add Student</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="javascript:void(0);">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input id="CFirstName" type="text" class="form-control" placeholder="First Name" name="FirstName" autocomplete="off">
+                            <br>
+                            <input id="CLastName" type="text" class="form-control" placeholder="Last Name" name="LastName" autocomplete="off">
+                            <br>
+                            <label for="StudentClass">Class:</label>
+                            <div class="form-group">
+                                <select id="CClassSelect" class="form-control" name="StudentClass">
+
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+
+                                </select>
+                            </div>
+
+
+
+                            <div id="CSubjectBlock">
+                                <div>
+                                    <label for="StudentSubject">Subject:</label>
+                                    <div class="form-group" name="SubjectType">
+                                        <select class="SubjectSelectDrop form-control" name="StudentSubject">
+                                            <option value="English">English</option>
+                                            <option value="Maths">Maths</option>
+                                            <option value="Science">Science</option>
+                                        </select>
+                                        <br>
+                                        <input type="number" min="1" max="100" class="StudentMarks form-control Marks" placeholder="Marks" name="Marks" autocomplete="off">
+                                    </div>
+                                    <button class="btn btn-default btn-sm RemoveSubjectButton">Remove Subject</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button id="CAddSubjectButton" class="btn btn-primary btn-sm">Add Subject</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button id="CreateStudentButton" type="button" class="btn btn-default" data-dismiss="modal">Add Student</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <!-- Edit Modal-->
+    <div class="modal fade" id="editStudentData" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Edit Student <span id="ModalHeaderStudentId"> </span></h4>
+                </div>
+                <div class="modal-body">
+                    <form action="javascript:void(0);">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input id="FirstName" type="text" class="form-control" placeholder="First Name" name="FirstName" autocomplete="off">
+                            <br>
+                            <input id="LastName" type="text" class="form-control" placeholder="Last Name" name="LastName" autocomplete="off">
+                            <br>
+                            <label for="StudentClass">Class:</label>
+                            <div class="form-group">
+                                <select id="ClassSelect" class="form-control" name="StudentClass">
+
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+
+                                </select>
+                            </div>
+
+
+
+                            <div id="SubjectBlock">
+                                <div>
+                                    <label for="StudentSubject">Subject:</label>
+                                    <div class="form-group" name="SubjectType">       
+                                    <select class="SubjectSelectDrop form-control" name="StudentSubject">
+                                        <option value="English">English</option> 
+                                        <option value="Maths">Maths</option>    
+                                        <option value="Science">Science</option>  
+                                        </select>                               
+                                    <br>                                                 
+                                    <input type="number" min="1" max="100" class="StudentMarks form-control Marks" placeholder="Marks" name="Marks" autocomplete="off">    
+                                        </div> 
+                                    <button class="btn btn-default btn-sm RemoveSubjectButton">Remove Subject</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button id="AddSubjectButton" class="btn btn-primary btn-sm">Add Subject</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button id="UpdateStudentButton" type="button" class="btn btn-default" data-dismiss="modal">Update</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- Delete Confirmation modal-->
+    <div class="modal fade" id="deleteStudentData" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Are you sure you want to delete student with ID <span id="DeleteStudentID"></span></h4>
+                </div>
+                <div class="modal-footer">
+                    <button id="DeleteStudent" type="button" class="btn btn-default" data-dismiss="modal">Confirm</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @*<script src="~/js/site.js"></script>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>*@
+
+</body>
+</html>
