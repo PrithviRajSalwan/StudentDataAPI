@@ -419,6 +419,61 @@ namespace StudentDataAPI.Controllers
             StudentDetail8.Class = "3";
             StudentDetail8.SubjectDataList = StudentDetailList8;
 
+//////////////////////////////////////////////////////////////////
+            StudentDetail StudentDetail9 = new StudentDetail();
+
+
+            List<SubjectData> StudentDetailList9 = new List<SubjectData>();
+
+            SubjectData SubjectData18 = new SubjectData();
+            SubjectData18.StudentId = 9;
+            SubjectData18.SubjectMarks = 37;
+            SubjectData18.SubjectName = S;
+            StudentDetailList5.Add(SubjectData18);
+
+
+
+            StudentDetail9.StudentId = 9;
+            StudentDetail9.FirstName = "Kumar";
+            StudentDetail9.LastName = "Raj";
+            StudentDetail9.Class = "3";
+            StudentDetail9.SubjectDataList = StudentDetailList9;
+
+            //////////////////////////////////////////////////////////////////
+            StudentDetail StudentDetail10 = new StudentDetail();
+
+
+            List<SubjectData> StudentDetailList10 = new List<SubjectData>();
+
+            SubjectData SubjectData20 = new SubjectData();
+            SubjectData20.StudentId = 10;
+            SubjectData20.SubjectMarks = 67;
+            SubjectData20.SubjectName = S;
+            StudentDetailList5.Add(SubjectData20);
+
+            SubjectData SubjectData21 = new SubjectData();
+            SubjectData21.StudentId = 10;
+            SubjectData21.SubjectMarks = 45;
+            SubjectData21.SubjectName = M;
+            StudentDetailList5.Add(SubjectData21);
+
+
+            SubjectData SubjectData22 = new SubjectData();
+           SubjectData22.StudentId = 10;
+           SubjectData22.SubjectMarks = 45;
+            SubjectData22.SubjectName = E;
+            StudentDetailList5.Add(SubjectData22);
+
+
+
+
+
+            StudentDetail10.StudentId = 10;
+            StudentDetail10.FirstName = "Deepika";
+            StudentDetail10.LastName = "Roy";
+            StudentDetail10.Class = "2";
+            StudentDetail10.SubjectDataList = StudentDetailList10;
+
 
             #endregion
 
@@ -430,6 +485,8 @@ namespace StudentDataAPI.Controllers
             lstStudentDetail.Add(StudentDetail6);
             lstStudentDetail.Add(StudentDetail7);
             lstStudentDetail.Add(StudentDetail8);
+            lstStudentDetail.Add(StudentDetail9);            
+            lstStudentDetail.Add(StudentDetail10);
 
             return lstStudentDetail;
         }
