@@ -262,7 +262,7 @@ function StudentTableInitialize(FilterData) {
 
             if (aData != undefined && aData != null && aData != "") { 
             // Student  info
-                $('td:eq(0)', nRow).addClass("StudentDataId").html('<a href="javascript:void(0);"> ' + aData.StudentId + '</a>');
+                $('td:eq(0)', nRow).addClass("StudentDataId StudentDataId"+aData.StudentId.trim()).html('<a href="javascript:void(0);"> ' + aData.StudentId + '</a>');
                 $('td:eq(0)', nRow).parent().data(aData);
                 $('td:eq(0)', nRow).parent().addClass("StudentMainTableRow");
             $('td:eq(1)', nRow).addClass("StudentDataFirstName").html('<a href="javascript:void(0);"> ' + aData.FirstName + '</a>');
@@ -562,6 +562,8 @@ $(document).ready(function () {
     $("#DeleteStudent").on("click", function () {
         if (DeleteStudentID != "" && DeleteStudentID != "0") {
             DeleteStudentsData(DeleteStudentID);
+            
+            $(".StudentDataId" + DeleteStudentID ).parent().remove();
         }
 
     });
