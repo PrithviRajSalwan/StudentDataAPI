@@ -429,7 +429,7 @@ namespace StudentDataAPI.Controllers
             SubjectData18.StudentId = 9;
             SubjectData18.SubjectMarks = 37;
             SubjectData18.SubjectName = S;
-            StudentDetailList5.Add(SubjectData18);
+            StudentDetailList9.Add(SubjectData18);
 
 
 
@@ -449,20 +449,20 @@ namespace StudentDataAPI.Controllers
             SubjectData20.StudentId = 10;
             SubjectData20.SubjectMarks = 67;
             SubjectData20.SubjectName = S;
-            StudentDetailList5.Add(SubjectData20);
+            StudentDetailList10.Add(SubjectData20);
 
             SubjectData SubjectData21 = new SubjectData();
             SubjectData21.StudentId = 10;
             SubjectData21.SubjectMarks = 45;
             SubjectData21.SubjectName = M;
-            StudentDetailList5.Add(SubjectData21);
+            StudentDetailList10.Add(SubjectData21);
 
 
             SubjectData SubjectData22 = new SubjectData();
            SubjectData22.StudentId = 10;
            SubjectData22.SubjectMarks = 45;
             SubjectData22.SubjectName = E;
-            StudentDetailList5.Add(SubjectData22);
+            StudentDetailList10.Add(SubjectData22);
 
 
 
