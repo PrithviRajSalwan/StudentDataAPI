@@ -555,7 +555,8 @@ $(document).ready(function () {
     $("#StudentDataTable").on("click", "[data-target='#deleteStudentData']", function () {
 
         DeleteStudentID = $(this).parent().parent().data().StudentId;
-
+        
+        $("#DeleteStudentID").html(DeleteStudentID);
     });
 
     $("#DeleteStudent").on("click", function () {
